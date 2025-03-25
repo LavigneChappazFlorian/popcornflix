@@ -1,0 +1,49 @@
+.MoviesList {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.MoviesList:hover {
+    img {
+        transform: scale(1.1);
+    }
+
+    span {
+        opacity: 1;
+    }
+}
+
+.movie-img {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-img img {
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    transition: .3s;
+}
+
+.movie-img span {
+    position: relative;
+    top: -97%;
+    left: 80%;
+    background: var(--light-grey);
+    border-radius: 2rem 0 0 2rem;
+    color: var(--white);
+    font-size: .7rem;
+    opacity: .7;
+    padding: .5rem 1rem;
+}
+
+.movie-text span {
+    color: var(--white);
+    font-size: .9rem;
+    opacity: .7;
+    transition: .3s;
+}

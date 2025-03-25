@@ -1,0 +1,35 @@
+.Footer {
+    background: var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+.footer-left img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.footer-center ul, .footer-right {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-center a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: .7;
+    transition: .3s;
+}
+
+.footer-center a:hover {
+    opacity: 1;
+}
+
+.footer-right {
+    gap: 1rem;
+}

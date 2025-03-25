@@ -1,0 +1,7 @@
+.SocialLink a {
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    color: var(--white);
+    text-decoration: none;
+    padding: .8rem 1rem;
+}

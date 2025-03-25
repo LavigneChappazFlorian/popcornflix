@@ -1,0 +1,38 @@
+header {
+    position: absolute;
+    padding: 1.5rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+    z-index: 2;
+}
+
+header ul {
+    position: absolute;
+    top: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+header a {
+    color: var(--white);
+    font-weight: 600;
+    opacity: .8;
+    text-decoration: none;
+    transition: .3s;
+}
+
+header a:hover {
+    opacity: 1;
+}
+
+header span {
+    font-size: 1.25rem;
+    background: var(--light-grey);
+    padding: .5rem .8rem;
+    border-radius: 10px;
+}
