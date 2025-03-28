@@ -17,8 +17,7 @@
 }
 
 .movie-img {
-    height: 300px;
-    width: 100%;
+    height: auto;
     overflow: hidden;
 }
 
@@ -29,21 +28,25 @@
     transition: .3s;
 }
 
-.movie-img span {
-    position: relative;
-    top: -97%;
-    left: 80%;
-    background: var(--light-grey);
-    border-radius: 2rem 0 0 2rem;
-    color: var(--white);
-    font-size: .7rem;
-    opacity: .7;
-    padding: .5rem 1rem;
+.movie-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
 }
 
 .movie-text span {
     color: var(--white);
     font-size: .9rem;
-    opacity: .7;
+    opacity: .8;
     transition: .3s;
+}
+
+.movie-text span:nth-child(2) {
+    background: var(--red);
+    border-radius: 2rem;
+    color: var(--white);
+    font-size: .7rem;
+    padding: .5rem 1rem;
 }
