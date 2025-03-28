@@ -1,6 +1,13 @@
+import { React, useState } from "react";
 import "./moviesSort.css";
 
-function MoviesSort() {
+function MoviesSort({ moviesList }) {
+    const [input, setInput] = useState("");
+
+    function handleChange(value) {
+        setInput(value);
+    }
+
     return (
         <div className="MoviesSort">
             <form method="GET">
@@ -19,7 +26,23 @@ function MoviesSort() {
                     </select>
                 </div>
                 <div className="form-right">
-                    <input type="search" placeholder="Rechercher..." />
+                    <input type="search" value={input} onInput={(e) => handleChange(e.target.value)} placeholder="Rechercher..." />
+                    <div className="input-results">
+                        {
+                            input ? 
+                            <div className="results">{
+                                moviesList.filter((movie) => {
+                                    return (
+                                        input.toLowerCase() === '' ? movie : movie.title.toLowerCase().includes(input)
+                                    )
+                                }).map((movie) => (
+                                    <p>{movie.title}</p>
+                                ))
+                            }</div> : 
+                            false
+                        }
+                        
+                    </div>
                 </div>
             </form>
         </div>
