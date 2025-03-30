@@ -1,4 +1,4 @@
-import SocialLink from "../socialLink/socialLink";
+import SocialLink from "../socialLink/SocialLink";
 import "./footer.css";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
@@ -12,7 +12,7 @@ function Footer() {
                 <nav>
                     <ul>
                         <li><a href="/">Accueil</a></li>
-                        <li><a href="#movies-header">Films</a></li>
+                        <li><a href="/movies">Films</a></li>
                         <li><a href="#movies">Cinémas</a></li>
                     </ul>
                 </nav>

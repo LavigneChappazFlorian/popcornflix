@@ -40,9 +40,15 @@
     background: var(--dark-grey);
     box-shadow: 0 0 20px black;
     overflow: scroll;
+    scrollbar-width: none;
     max-height: 150px;
     max-width: 12rem;
 }
+
+.input-results::-webkit-scrollbar { 
+    display: none; 
+}
+
 
 .results {
     padding: 1rem;
