@@ -1,0 +1,36 @@
+main {
+  background: var(--dark-grey);
+  font-family: "Lato";
+  margin: 2rem 5rem;
+}
+
+h2 {
+  margin: 2rem 0;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.movies-header {
+  margin: 2rem 0;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+}
+
+.movies-showAll {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.movies-showAll hr {
+  width: 90%;
+}
