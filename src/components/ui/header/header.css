@@ -1,33 +1,43 @@
+.Header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
 header {
-    position: absolute;
+    background: var(--light-grey) .2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Pour compatibilité Safari */
+    box-shadow: 0 0 5px black;
     padding: 1.5rem 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
-    z-index: 2;
 }
 
 header ul {
-    position: absolute;
-    top: 100%;
     list-style: none;
     display: flex;
-    flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 header a {
     color: var(--white);
-    font-weight: 600;
+    font-weight: 400;
     opacity: .8;
+    padding-bottom: 5px;
     text-decoration: none;
     transition: .3s;
 }
 
 header a:hover {
     opacity: 1;
+}
+
+header a.active {
+    border-bottom: 2px solid var(--red);
 }
 
 header span {
