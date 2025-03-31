@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./moviesSort.css";
 
 function MoviesSort({ input, selectedGenre, sortBy, onSearchChange, onGenreChange, onSortChange }) {
