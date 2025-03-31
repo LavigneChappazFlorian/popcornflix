@@ -1,5 +1,6 @@
+import { NavLink } from "react-router-dom";
 import "./header.css";
-import { FaRegUser } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
 
 function Header() {
     return (
@@ -8,14 +9,14 @@ function Header() {
                 <div className="header-left">
                     <nav>
                         <ul>
-                            <li><a href="/">Accueil</a></li>
-                            <li><a href="/">Films</a></li>
-                            <li><a href="/">Cinémas</a></li>
+                            <li><NavLink to="/">Accueil</NavLink></li>
+                            <li><NavLink to="/movies">Films</NavLink></li>
+                            <li><NavLink to="/cinemas">Cinémas</NavLink></li>
                         </ul>
                     </nav>
                 </div>
                 <div className="header-right">
-                    <a href="/account"><span><FaRegUser /></span></a>
+                    <a href="/liked"><span><FaRegHeart /></span></a>
                 </div>
             </header >
         </div >

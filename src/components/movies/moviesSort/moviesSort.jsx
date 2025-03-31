@@ -1,52 +1,48 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import "./moviesSort.css";
 
-function MoviesSort({ moviesList }) {
-    const [input, setInput] = useState("");
+function MoviesSort({ input, selectedGenre, sortBy, onSearchChange, onGenreChange, onSortChange }) {
+    const [genres, setGenres] = useState([]);
+    const apiKey = 'fd289448dafe0650ad648b0826b5ee68';
 
-    function handleChange(value) {
-        setInput(value);
-    }
+    const getGenres = async () => {
+        const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=fr-FR&api_key=${apiKey}`);
+        const data = await response.json();
+        setGenres(data.genres);
+    };
+
+    useEffect(() => { getGenres(); }, []);
 
     return (
         <div className="MoviesSort">
             <form method="GET">
                 <div className="form-left">
-                    <select name="movies-categories" id="movies-categories">
-                        <option selected disabled>Catégorie(s)</option>
-                        <option value="1">Valeur 1</option>
-                        <option value="2">Valeur 2</option>
-                        <option value="3">Valeur 3</option>
+                    <select value={selectedGenre} onChange={(e) => onGenreChange(e.target.value)}>
+                        <option value="">Tous les genres</option>
+                        {genres.map((genre) => (
+                            <option key={genre.id} value={genre.id}> {genre.name} </option>
+                        ))}
                     </select>
-                    <select name="movies-sort" id="movies-sort">
-                        <option selected disabled>Trier par</option>
-                        <option value="1">Date de sortie</option>
-                        <option value="2">Meilleurs notes</option>
-                        <option value="3">Popularité</option>
+
+                    <select value={sortBy} onChange={(e) => onSortChange(e.target.value)}>
+                        <option value="popularity.desc">Les plus populaires</option>
+                        <option value="release_date.desc">Les plus récents</option>
+                        <option value="vote_average.desc">Les mieux notés</option>
+                        <option value="original_title.asc">Ordre alphabétique</option>
                     </select>
                 </div>
+
                 <div className="form-right">
-                    <input type="search" value={input} onInput={(e) => handleChange(e.target.value)} placeholder="Rechercher..." />
-                    <div className="input-results">
-                        {
-                            input ? 
-                            <div className="results">{
-                                moviesList.filter((movie) => {
-                                    return (
-                                        input.toLowerCase() === '' ? movie : movie.title.toLowerCase().includes(input)
-                                    )
-                                }).map((movie) => (
-                                    <p>{movie.title}</p>
-                                ))
-                            }</div> : 
-                            false
-                        }
-                        
-                    </div>
+                    <input
+                        type="search"
+                        value={input}
+                        onInput={(e) => onSearchChange(e.target.value)}
+                        placeholder="Rechercher..."
+                    />
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default MoviesSort;
