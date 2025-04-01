@@ -1,0 +1,54 @@
+main {
+    background: var(--dark-grey);
+    font-family: "Montserrat";
+    margin: 2rem 5rem;
+}
+
+.loading {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+h2 {
+    margin: 2rem 0;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.movies-header {
+    margin: 2rem 0;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+.btn-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.btn-page p {
+    cursor: pointer;
+    color: var(--red);
+    font-size: .9rem;
+}
+
+.btn-page span {
+    background: var(--red);
+    border-radius: 5px;
+    color: var(--white);
+    padding: .5rem .7rem;
+    opacity: .8;
+}
