@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   build: {
+    outDir: 'dist',
+    emptyOutDir: true,
     rollupOptions: {
       external: [
         '/src/components/ui/button/Button',
