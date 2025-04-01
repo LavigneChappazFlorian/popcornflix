@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import "./movieDetailPage.css";
-import Footer from '../../components/ui/footer/Footer';
-import Header from '../../components/ui/header/Header';
+import Footer from '/src/components/ui/footer/Footer';
+import Header from '/src/components/ui/header/Header';
 
 function MovieDetailPage() {
     const { id } = useParams();

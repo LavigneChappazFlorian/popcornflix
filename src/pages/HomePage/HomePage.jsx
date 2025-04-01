@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./homePage.css";
 
-import MovieFeatured from "../../components/movies/movieFeatured/MovieFeatured";
-import MoviesSort from "../../components/movies/moviesSort/MoviesSort";
-import MoviesList from "../../components/movies/moviesList/MoviesList";
-import Button from "../../components/ui/button/Button";
-import Footer from "../../components/ui/footer/Footer";
-import Header from "../../components/ui/header/Header";
+import MovieFeatured from "/src/components/movies/movieFeatured/MovieFeatured";
+import MoviesSort from "/src/components/movies/moviesSort/MoviesSort";
+import MoviesList from "/src/components/movies/moviesList/MoviesList";
+import Button from "/src/components/ui/button/Button";
+import Footer from "/src/components/ui/footer/Footer";
+import Header from "/src/components/ui/header/Header";
 
 function HomePage() {
     const navigate = useNavigate();
