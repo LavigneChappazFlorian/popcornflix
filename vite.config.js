@@ -14,7 +14,10 @@ export default defineConfig({
         '/src/components/ui/button/Button',
         '/src/components/ui/footer/Footer',
         '/src/components/ui/header/Header'
-      ]
+      ],
+      output: {
+        format: 'es'
+      }
     }
   },
   base: './',
