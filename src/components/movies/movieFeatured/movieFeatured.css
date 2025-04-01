@@ -16,7 +16,7 @@
 .MovieFeatured a {
     z-index: 1;
     position: absolute;
-    top: 84%;
+    top: 90%;
     left: 95%;
     color: var(--white);
     font-size: 2rem;

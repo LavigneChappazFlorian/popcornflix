@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../HomePage/homePage.css";
+import "/src/pages/HomePage/homePage.css";
 
-import MoviesSort from "../../components/movies/moviesSort/MoviesSort";
-import MoviesList from "../../components/movies/moviesList/MoviesList";
-import Footer from "../../components/ui/footer/Footer";
-import Header from "../../components/ui/header/Header";
+import MoviesSort from "/src/components/movies/moviesSort/MoviesSort";
+import MoviesList from "/src/components/movies/moviesList/MoviesList";
+import Footer from "/src/components/ui/footer/Footer";
+import Header from "/src/components/ui/header/Header";
 
 function MoviesListPage() {
     const navigate = useNavigate();
