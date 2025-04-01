@@ -1,6 +1,6 @@
 import React from "react";
 import "./errorPage.css"
-import Button from "../../components/ui/button/Button";
+import Button from "/src/components/ui/button/Button";
 
 function ErrorPage() {
     return (
