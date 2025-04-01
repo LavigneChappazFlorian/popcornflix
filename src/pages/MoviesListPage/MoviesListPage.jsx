@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "/src/pages/HomePage/homePage.css";
+import "./moviesListPage.css";
 
 import MoviesSort from "/src/components/movies/moviesSort/MoviesSort";
 import MoviesList from "/src/components/movies/moviesList/MoviesList";
@@ -13,6 +13,7 @@ function MoviesListPage() {
     const [moviesList, setMoviesList] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const [page, setPage] = useState(1);
     const [filteredMovies, setFilteredMovies] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [selectedGenre, setSelectedGenre] = useState("");
@@ -21,7 +22,8 @@ function MoviesListPage() {
     useEffect(() => {
         async function getMoviesList() {
             setLoading(true);
-            const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=true&language=fr-FR&sort_by=${sortBy}${selectedGenre}&region=fr`;
+            setPage(page);
+            const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&include_video=true&language=fr-FR&page=${page}&sort_by=${sortBy}${selectedGenre}&region=fr`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -34,7 +36,7 @@ function MoviesListPage() {
         };
 
         getMoviesList();
-    }, [apiKey]);
+    }, [apiKey, page]);
 
     // Appliquer filtres et tri
     useEffect(() => {
@@ -64,6 +66,16 @@ function MoviesListPage() {
 
         setFilteredMovies(movies);
     }, [searchInput, selectedGenre, sortBy, moviesList]);
+
+    function nextPage() {
+        setPage(page + 1);
+        //console.log(page);
+    }
+
+    function previousPage() {
+        setPage(page - 1);
+        //console.log(page);
+    }
 
     const handleDetailsClick = (movie) => {
         navigate(`/movies/${movie.id}`);
@@ -100,10 +112,25 @@ function MoviesListPage() {
                                     vote_average={movie.vote_average}
                                     title={movie.title}
                                 />
+
                             </div>
-                        ))}
+                        ))};
                     </div>
                 )}
+                {
+                    page > 1 ? (
+                        <div className="btn-page">
+                            <p onClick={previousPage}>←</p>
+                            <span>{page}</span>
+                            <p onClick={nextPage}>→</p>
+                        </div>
+                    ) : (
+                        <div className="btn-page">
+                            <span>{page}</span>
+                            <p onClick={nextPage}>→</p>
+                        </div>
+                    )
+                }
             </main>
             <footer>
                 <Footer />
