@@ -1,37 +1,27 @@
 .movie-detail {
-    font-family: "Montserrat";
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.5rem;
     color: var(--white);
     box-shadow: 0 0 5px black;
     min-height: 100vh;
 }
 
-/* Header et navigation */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-/* Informations principales du film */
 .movie-detail h1 {
-    font-size: 42px;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--white);
 }
 
 .movie-detail p {
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
     color: #a9b3c9;
     max-width: 800px;
 }
 
-/* Partie supérieure avec backdrop */
 .movie-header {
     position: relative;
     height: 500px;
@@ -67,7 +57,7 @@
     z-index: 3;
     display: flex;
     align-items: flex-end;
-    gap: 30px;
+    gap: 2rem;
 }
 
 .movie-poster-container {
@@ -101,14 +91,14 @@
 }
 
 .movie-rating .rating-value {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 600;
     margin-right: 10px;
 }
 
 .movie-meta {
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
     margin-bottom: 20px;
 }
 
@@ -128,7 +118,6 @@
     font-weight: 600;
 }
 
-/* Informations détaillées */
 .movie-info-section {
     margin-bottom: 40px;
 }
@@ -155,7 +144,6 @@
     font-size: 14px;
 }
 
-/* Bande-annonce */
 .movie-trailers {
     margin-bottom: 40px;
 }
@@ -166,7 +154,6 @@
     height: 500px;
 }
 
-/* Équipe du film */
 .movie-crew {
     margin-bottom: 40px;
 }
@@ -191,27 +178,26 @@
 }
 
 .crew-member-name {
-    font-size: 16px;
+    font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 5px;
     text-align: center;
 }
 
 .crew-member-role {
-    font-size: 14px;
+    font-size: 1rem;
     color: #a9b3c9;
     text-align: center;
 }
 
-/* Recommandations */
 .movie-recommendations {
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
 }
 
 .recommendations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
+    gap: 2rem;
 }
 
 .recommendation-item {

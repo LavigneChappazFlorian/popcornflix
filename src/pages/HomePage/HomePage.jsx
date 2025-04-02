@@ -21,6 +21,7 @@ function HomePage() {
     const [selectedGenre, setSelectedGenre] = useState("");
     const [sortBy, setSortBy] = useState("popularity.desc");
 
+    // Récupération de la liste des films
     useEffect(() => {
         async function getMoviesList() {
             setLoading(true);
@@ -69,14 +70,17 @@ function HomePage() {
         setFilteredMovies(movies);
     }, [searchInput, selectedGenre, sortBy, moviesList]);
 
+    // Afficher l'ensemble des films de la page
     function showAll() {
         setMoviesToShow(filteredMovies.length);
     }
 
+    // Afficher seulement 10 films de la page
     function showLess() {
         setMoviesToShow(10);
     }
 
+    // Afficher la page "détail" d'un film lors du clic
     const handleDetailsClick = (movie) => {
         navigate(`/movies/${movie.id}`);
     };

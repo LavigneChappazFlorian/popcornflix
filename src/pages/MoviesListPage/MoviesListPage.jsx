@@ -19,6 +19,7 @@ function MoviesListPage() {
     const [selectedGenre, setSelectedGenre] = useState("");
     const [sortBy, setSortBy] = useState("popularity.desc");
 
+    // Récupération de la liste des films
     useEffect(() => {
         async function getMoviesList() {
             setLoading(true);
@@ -57,6 +58,7 @@ function MoviesListPage() {
         }
 
         // Trier les films
+        // eslint-disable-next-line
         movies.sort((a, b) => {
             if (sortBy === "popularity.desc") return b.popularity - a.popularity;
             if (sortBy === "release_date.desc") return new Date(b.release_date) - new Date(a.release_date);
@@ -77,6 +79,7 @@ function MoviesListPage() {
         //console.log(page);
     }
 
+    // Afficher la page "détail" d'un film lors du clic
     const handleDetailsClick = (movie) => {
         navigate(`/movies/${movie.id}`);
     };
