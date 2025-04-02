@@ -1,0 +1,28 @@
+.Card {
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.Card:hover {
+    transform: scale(1.05);
+}
+
+.Card h2 {
+    color: var(--red);
+}
+
+.Card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+}

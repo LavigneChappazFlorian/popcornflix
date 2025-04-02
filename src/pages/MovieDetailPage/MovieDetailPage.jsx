@@ -20,6 +20,7 @@ function MovieDetailPage() {
 
     const API_KEY = 'fd289448dafe0650ad648b0826b5ee68';
 
+    // Récupération des données d'un film
     const getMovie = async () => {
         try {
             const response = await fetch(
@@ -32,6 +33,7 @@ function MovieDetailPage() {
         }
     };
 
+    // Récupération de la bande annonce
     const getVideo = async () => {
         try {
             const response = await fetch(
@@ -55,6 +57,7 @@ function MovieDetailPage() {
         }
     };
 
+    // Récupération des catégories
     const getCategories = async () => {
         try {
             const response = await fetch(
@@ -67,6 +70,7 @@ function MovieDetailPage() {
         }
     };
 
+    // Récupération des détails du film séléctionné
     const getMovieDetails = async () => {
         try {
             const response = await fetch(
@@ -80,28 +84,33 @@ function MovieDetailPage() {
         }
     };
 
+    // Récupération du casting du film
     const getMovieCredits = async () => {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`);
             const data = await response.json();
             const directorData = data.crew.find((member) => member.job === 'Director');
             setDirector(directorData);
-            setCast(data.cast.slice(0, 8)); // Récupérer les 8 premiers acteurs
+            // Récupération des 10 premiers acteurs
+            setCast(data.cast.slice(0, 10)); 
         } catch (error) {
             console.error("Erreur lors de la récupération des crédits:", error);
         }
     }
 
+    // Récupération des recommandations lié au film
     const getRecommendations = async () => {
         try {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${API_KEY}&language=fr-FR&page=1`);
             const data = await response.json();
-            setRecommendations(data.results.slice(0, 8)); // Limiter à 8 recommandations
+            // Limiter à 10 recommandations
+            setRecommendations(data.results.slice(0, 10)); 
         } catch (error) {
             console.error("Erreur lors de la récupération des recommandations:", error);
         }
     }
 
+    // Formatage du temps pour un meilleur affichage
     const formatRuntime = (minutes) => {
         if (!minutes) return "";
         const hours = Math.floor(minutes / 60);
@@ -109,15 +118,18 @@ function MovieDetailPage() {
         return `${hours}h ${remainingMinutes} min`;
     };
 
+    // Formatage de la date pour un meilleur affichage
     const formatDate = (dateString) => {
         if (!dateString) return "";
         return new Date(dateString).toLocaleDateString('fr-FR');
     };
 
+    // Afficher la page "détail" d'un film recommandé lors du clic
     const handleRecommendationClick = (recommendation) => {
         navigate(`/movies/${recommendation.id}`);
     };
 
+    // Fetch de l'ensemble des données récupérées
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
@@ -133,10 +145,10 @@ function MovieDetailPage() {
         fetchData();
     }, [id]);
 
+    // Loader en attente des données du film
     if (loading || !movie) {
         return (
             <div className="loading">
-                <div className="loading-spinner"></div>
                 <p>Chargement du film...</p>
             </div>
         );
