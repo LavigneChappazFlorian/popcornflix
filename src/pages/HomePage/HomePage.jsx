@@ -11,7 +11,7 @@ import Header from "/src/components/ui/header/Header";
 
 function HomePage() {
     const navigate = useNavigate();
-    const apiKey = "fd289448dafe0650ad648b0826b5ee68";
+    const apiKey = "";
     const [moviesToShow, setMoviesToShow] = useState(10);
     const [moviesList, setMoviesList] = useState([]);
     const [loading, setLoading] = useState(true);
